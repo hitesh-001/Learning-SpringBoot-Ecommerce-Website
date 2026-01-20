@@ -1,11 +1,9 @@
 package com.ecommerce.project.security.request;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import lombok.Data;
-
 import java.util.Set;
+
+import jakarta.validation.constraints.*;
+import lombok.Data;
 
 @Data
 public class SignupRequest {
@@ -18,8 +16,17 @@ public class SignupRequest {
     @Email
     private String email;
 
+    private Set<String> role;
+
     @NotBlank
-    @Size(min = 6, max = 20)
+    @Size(min = 6, max = 40)
     private String password;
-    private Set<String> roles;
+
+    public Set<String> getRole() {
+        return this.role;
+    }
+
+    public void setRole(Set<String> role) {
+        this.role = role;
+    }
 }

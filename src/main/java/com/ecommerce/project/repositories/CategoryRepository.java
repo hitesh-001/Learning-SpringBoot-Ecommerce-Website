@@ -1,13 +1,8 @@
 package com.ecommerce.project.repositories;
 
 import com.ecommerce.project.model.Category;
-import com.ecommerce.project.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-@Repository
-public interface CategoryRepository extends JpaRepository<Category, Long> {
+public interface CategoryRepository extends JpaRepository<Category,Long> {
     Category findByCategoryName(String categoryName);
 }
